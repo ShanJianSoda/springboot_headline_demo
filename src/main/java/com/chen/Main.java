@@ -11,6 +11,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.concurrent.Callable;
+
 @SpringBootApplication
 @MapperScan("com.chen.mapper")
 public class Main {
@@ -32,6 +34,22 @@ public class Main {
         interceptor.addInnerInterceptor(new BlockAttackInnerInterceptor());
 
         return interceptor;
+    }
+
+    public void threadTest() {
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+        // lambda
+        Thread thread2 = new Thread(() -> {
+
+        });
+
+        thread1.start();
     }
 }
 

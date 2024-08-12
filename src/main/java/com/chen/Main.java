@@ -49,6 +49,8 @@ public class Main {
 
         });
 
+        // 隐藏 stash
+
         thread1.start();
     }
 }
